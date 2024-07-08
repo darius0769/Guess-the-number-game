@@ -14,7 +14,7 @@ function guessRandom() {
 
 let x = guessRandom();
 // let x = Math.trunc(Math.random() * 20) + 1;
-console.log(x);
+//console.log(x);
 let s = 20;
 let h;
 // let y = document.querySelector('.guess').value;
@@ -45,8 +45,10 @@ document.querySelector('.check').addEventListener('click', function () {
   else if (x == y) {
     document.querySelector('.message').textContent = 'CORRECT ANSWER';
     document.querySelector('.number').textContent = x;
-    h = s;
-    document.querySelector('.highscore').textContent = h;
+    if (h < s) {   //UPDATE HIGH SCORE ONLY IF IT IS LESS THAN SCORE                                               
+      h = s;
+      document.querySelector('.highscore').textContent = h;   
+    }
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
   }
@@ -85,5 +87,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
   // let x = Math.trunc(Math.random() * 20) + 1;
-  console.log(x);
+  //console.log(x);
 });
